@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0D0D0D;--card:#141414;--card2:#1A1A1A;--border:#2A2A2A;--text:#E8E6E1;--muted:#888880;--dim:#555550;--orange:#F5A623;--orange-dim:#3D2A0E;--green:#2ECC71;--green-dim:#0E3D22;--red:#E74C3C;--red-dim:#3D0E0E;--blue:#3498DB;--blue-dim:#0E2A3D;--purple:#9B59B6;--purple-dim:#2A0E3D;--teal:#1ABC9C;--teal-dim:#0E3D33;--coral:#E67E22;--mono:'JetBrains Mono',monospace;--sans:'DM Sans',sans-serif;--r:10px;--rl:14px}
+:root{--bg:#0D0D0D;--card:#141414;--card2:#1A1A1A;--border:#2A2A2A;--text:#E8E6E1;--muted:#888880;--dim:#555550;--orange:#F5A623;--od:#3D2A0E;--green:#2ECC71;--gd:#0E3D22;--red:#E74C3C;--rd:#3D0E0E;--blue:#3498DB;--bd:#0E2A3D;--purple:#9B59B6;--pd:#2A0E3D;--teal:#1ABC9C;--td:#0E3D33;--coral:#E67E22;--mono:'JetBrains Mono',monospace;--sans:'DM Sans',sans-serif;--r:10px;--rl:14px}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;padding:0}
 .w{max-width:1200px;margin:0 auto;padding:2rem 2.5rem 4rem}
 .hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem;border-bottom:1px solid var(--border);padding-bottom:1.5rem}
@@ -18,11 +18,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 .sh{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
 .sh h2{font-size:1.1rem;font-weight:600}
 .p{font-size:0.65rem;font-family:var(--mono);padding:3px 10px;border-radius:20px;font-weight:500}
-.po{background:var(--orange-dim);color:var(--orange)}.pg{background:var(--green-dim);color:var(--green)}.pr{background:var(--red-dim);color:var(--red)}.pb{background:var(--blue-dim);color:var(--blue)}.pt{background:var(--teal-dim);color:var(--teal)}.pp{background:var(--purple-dim);color:var(--purple)}
-.g{display:grid;gap:12px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.po{background:var(--od);color:var(--orange)}.pg{background:var(--gd);color:var(--green)}.pr{background:var(--rd);color:var(--red)}.pb{background:var(--bd);color:var(--blue)}.pt{background:var(--td);color:var(--teal)}.pp{background:var(--pd);color:var(--purple)}
+.g{display:grid;gap:12px}.g5{grid-template-columns:repeat(5,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
 .mc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;position:relative;overflow:hidden}
 .mc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.ao::before{background:var(--orange)}.ag::before{background:var(--green)}.ab::before{background:var(--blue)}.ap::before{background:var(--purple)}.ar::before{background:var(--red)}.at::before{background:var(--teal)}
+.ao::before{background:var(--orange)}.ag::before{background:var(--green)}.ab::before{background:var(--blue)}.ap::before{background:var(--purple)}.ar::before{background:var(--red)}.at::before{background:var(--teal)}.ac::before{background:var(--coral)}
 .ml{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
 .mv{font-size:1.65rem;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
 .ms{font-size:0.72rem;margin-top:3px}
@@ -41,7 +41,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 .n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:0.75rem}
 .tn{font-weight:500}
 .bd{display:inline-block;padding:2px 8px;border-radius:20px;font-size:0.6rem;font-weight:600;font-family:var(--mono)}
-.bg{background:var(--green-dim);color:var(--green)}.bo{background:var(--orange-dim);color:var(--orange)}.br{background:var(--red-dim);color:var(--red)}.bb{background:var(--blue-dim);color:var(--blue)}
+.bg{background:var(--gd);color:var(--green)}.bo{background:var(--od);color:var(--orange)}.br{background:var(--rd);color:var(--red)}.bb{background:var(--bd);color:var(--blue)}
 .dv{height:1px;background:var(--border);margin:2rem 0}
 .fb{background:var(--card2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;font-family:var(--mono);font-size:0.78rem;line-height:2;margin-bottom:1rem}
 .fb .fl{font-family:var(--sans);font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:4px}
@@ -50,8 +50,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 .prose{font-size:0.82rem;line-height:1.7;color:var(--text);max-width:700px}
 .prose p{margin-bottom:0.8rem}
 .prose strong{color:var(--orange);font-weight:600}
+.src{display:inline-block;font-size:0.6rem;font-family:var(--mono);padding:2px 6px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.src-r{background:var(--pd);color:var(--purple)}
+.src-f{background:var(--bd);color:var(--blue)}
 .nt{font-size:0.72rem;color:var(--dim);font-style:italic;margin-top:1.5rem;padding-top:1rem;border-top:1px solid #1A1A1A}
-@media(max-width:800px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}.w{padding:1.5rem 1rem 3rem}}
+@media(max-width:900px){.g5,.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}.w{padding:1.5rem 1rem 3rem}}
 </style>
 </head>
 <body>
@@ -59,152 +62,161 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 
 <div class="hdr">
 <h1><span>REX</span> Q1 2026 Report</h1>
-<div class="meta">Freelancer tracing output | 3 Apr 2026 | Source: freelancer Google Sheets</div>
-</div>
-
-<!-- METRIC DEFINITIONS -->
-<div class="s">
-<div class="sh"><h2>Key metrics explained</h2></div>
-<div class="g2">
-<div class="cc">
-<div class="ct">WIS - Withdrawal Impact Score</div>
-<div class="prose">
-<p>Percentage of total traces that are withdrawals. Withdrawals are harder to obtain than deposits and more valuable to clients because they reveal where funds flow out of an exchange.</p>
-<p><strong>Formula:</strong> Withdrawals / Total Traces x 100</p>
-<p><strong>Target:</strong> 40-50%</p>
-</div>
-</div>
-<div class="cc">
-<div class="ct">TVS - Trace Value Score</div>
-<div class="prose">
-<p>Quality-weighted score that rewards higher-value trace types (withdrawals over deposits) and higher-value discovery types (retracing already-known entities over first-time discovery).</p>
-<p><strong>Formula:</strong> TVS = (C1 + C2) / 2 / total traces</p>
-<p><strong>C1 (trace type):</strong> Deposit = 2pts, Withdrawal = 3pts, Wdr PSP = 1pt</p>
-<p><strong>C2 (discovery):</strong> Dep retrace = 1pt, First-time = 2pts, Wdr retrace = 3pts</p>
-<p><strong>Target:</strong> 3.0 (2025 baseline: 2.1)</p>
-</div>
-</div>
-</div>
+<div class="meta">3 Apr 2026 | <span class="src src-r">RETOOL</span> totals | <span class="src src-f">SHEETS</span> per-tracer detail</div>
 </div>
 
 <div class="dv"></div>
 
-<!-- Q1 OVERVIEW -->
+<!-- Q1 OVERVIEW - RETOOL NUMBERS -->
 <div class="s">
-<div class="sh"><h2>Q1 overview</h2><span class="p po">Jan - Mar 2026</span></div>
-<div class="g4">
-<div class="mc ao"><div class="ml">Total traces</div><div class="mv">520</div><div class="ms mu">276D / 221W / 22Dir</div></div>
-<div class="mc ap"><div class="ml">TVS</div><div class="mv">2.23</div><div class="ms wa">C1: 2.42 / C2: 2.03</div></div>
-<div class="mc ag"><div class="ml">Total spend</div><div class="mv">$3,271</div><div class="ms up">$6.29/trace avg</div></div>
-<div class="mc ab"><div class="ml">Tracers (Mar)</div><div class="mv">7</div><div class="ms mu">13 on payroll</div></div>
+<div class="sh"><h2>Q1 overview</h2><span class="p po">Retool</span></div>
+<div class="g5">
+<div class="mc ao"><div class="ml">Total traces</div><div class="mv">620</div><div class="ms mu">375D / 182W / 60Dir / 3Priv</div></div>
+<div class="mc at"><div class="ml">Entities traced</div><div class="mv">76</div><div class="ms mu">Unique across Q1</div></div>
+<div class="mc ap"><div class="ml">QC pass rate</div><div class="mv">93%</div><div class="ms up">578 of 620 Ready</div></div>
+<div class="mc ag"><div class="ml">Total spend</div><div class="mv">$3,271</div><div class="ms mu">Freelancer cost only</div></div>
+<div class="mc ab"><div class="ml">Cost per trace</div><div class="mv">$5.28</div><div class="ms up">Based on 620 Retool traces</div></div>
 </div>
 </div>
 
-<!-- MONTH ON MONTH -->
+<!-- MONTH ON MONTH - RETOOL -->
 <div class="s">
-<div class="sh"><h2>Month-on-month progress</h2></div>
+<div class="sh"><h2>Month-on-month</h2><span class="p po">Retool</span></div>
 <div class="g2">
 <div class="cc">
 <div class="ct">Traces by type + WIS trend</div>
+<div class="prose" style="margin-bottom:12px"><p><strong>WIS (Withdrawal Impact Score)</strong> is the percentage of traces that are withdrawals. Withdrawals are harder to obtain and more valuable to clients because they show where funds flow out of an exchange. Target: 40-50%.</p></div>
 <div class="cw" style="height:300px"><canvas id="c1"></canvas></div>
 <div class="lg"><span><i style="background:#3498DB"></i>Deposits</span><span><i style="background:#2ECC71"></i>Withdrawals</span><span><i style="background:#555550"></i>Direct</span><span><i style="background:#E67E22"></i>WIS %</span></div>
 </div>
 <div class="cc">
-<div class="ct">TVS trend (C1 vs C2 per trace)</div>
+<div class="ct">TVS trend (freelancer sheets, C1 vs C2)</div>
+<div class="prose" style="margin-bottom:12px"><p><strong>TVS (Trace Value Score)</strong> is a quality-weighted metric combining two components: C1 (trace type value) and C2 (discovery value). Each scored per trace, then averaged. Full breakdown below. Target: 3.0.</p></div>
 <div class="cw" style="height:300px"><canvas id="c2"></canvas></div>
 <div class="lg"><span><i style="background:#9B59B6"></i>TVS</span><span><i style="background:#3498DB"></i>C1/trace</span><span><i style="background:#E67E22"></i>C2/trace</span><span><i style="background:rgba(46,204,113,0.3)"></i>Target 3.0</span></div>
 </div>
 </div>
 </div>
 
-<!-- MONTHLY DETAIL CARDS -->
+<!-- MONTHLY SNAPSHOTS -->
 <div class="s">
 <div class="sh"><h2>Monthly snapshots</h2></div>
 <div class="g3">
 <div class="mc ao">
-<div class="ml">January</div>
-<div class="mv">139 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
-<div class="ms mu">87D / 35W / 16Dir</div>
-<div class="ms wa">TVS 2.10 | WIS 25%</div>
-<div class="ms mu">3 tracers | $1,089 ($7.84/tr)</div>
-<div class="ms mu" style="margin-top:6px">Denis (42), Hilal (61), Ricardo (36)</div>
+<div class="ml">January <span class="src src-r">Retool</span></div>
+<div class="mv">177 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
+<div class="ms mu">114D / 29W / 32Dir | 27 entities</div>
+<div class="ms wa">WIS 16%</div>
+<div class="ms mu">$1,089 spend ($6.15/trace)</div>
+<div class="ms mu" style="margin-top:6px"><span class="src src-f">Sheets</span> 139 traces, 3 tracers: Denis (42), Hilal (61), Ricardo (36)</div>
+<div class="ms mu">TVS 2.03</div>
 </div>
 <div class="mc ao">
-<div class="ml">February</div>
-<div class="mv">113 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
-<div class="ms mu">60D / 51W / 2Dir</div>
-<div class="ms wa">TVS 2.24 | WIS 45%</div>
-<div class="ms mu">4 tracers | $985 ($8.72/tr)</div>
-<div class="ms mu" style="margin-top:6px">Denis (5), Hilal (39), Osama (19), Ricardo (50)</div>
+<div class="ml">February <span class="src src-r">Retool</span></div>
+<div class="mv">148 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
+<div class="ms mu">82D / 51W / 14Dir | 24 entities</div>
+<div class="ms wa">WIS 34%</div>
+<div class="ms mu">$985 spend ($6.66/trace)</div>
+<div class="ms mu" style="margin-top:6px"><span class="src src-f">Sheets</span> 113 traces, 4 tracers: Denis, Hilal, Osama, Ricardo</div>
+<div class="ms mu">TVS 2.27</div>
 </div>
 <div class="mc ao">
-<div class="ml">March</div>
-<div class="mv">268 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
-<div class="ms mu">129D / 135W / 4Dir</div>
-<div class="ms up">TVS 2.28 | WIS 50%</div>
-<div class="ms mu">7 tracers | $1,198 ($4.47/tr)</div>
-<div class="ms mu" style="margin-top:6px">Bloom, Denis, Hilal, Juan Jose, Priscilla, Ricardo, Tuomas</div>
+<div class="ml">March <span class="src src-r">Retool</span></div>
+<div class="mv">295 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
+<div class="ms mu">179D / 102W / 14Dir | 28 entities</div>
+<div class="ms up">WIS 35%</div>
+<div class="ms mu">$1,198 spend ($4.06/trace)</div>
+<div class="ms mu" style="margin-top:6px"><span class="src src-f">Sheets</span> 268 traces, 7 tracers: Bloom, Denis, Hilal, Juan Jose, Priscilla, Ricardo, Tuomas</div>
+<div class="ms mu">TVS 2.24</div>
 </div>
 </div>
 </div>
 
-<!-- COST EFFICIENCY -->
+<!-- COST + QC -->
 <div class="s">
-<div class="sh"><h2>Cost efficiency</h2><span class="p pg">-43% cost/trace Q1</span></div>
-<div class="cw cc" style="height:260px;padding-bottom:50px"><canvas id="c3"></canvas></div>
-<div class="lg"><span><i style="background:rgba(46,204,113,0.25)"></i>Traces</span><span><i style="background:#9B59B6"></i>$/trace</span></div>
+<div class="sh"><h2>Cost efficiency + QC</h2></div>
+<div class="g2">
+<div class="cc">
+<div class="ct">Cost per trace trend (spend / Retool traces)</div>
+<div class="cw" style="height:260px"><canvas id="c3"></canvas></div>
+<div class="lg"><span><i style="background:rgba(46,204,113,0.25)"></i>Retool traces</span><span><i style="background:#9B59B6"></i>$/trace</span></div>
+</div>
+<div class="cc">
+<div class="ct">QC status (Q1, Retool)</div>
+<div class="cw" style="height:260px"><canvas id="cqc"></canvas></div>
+<div class="lg"><span><i style="background:#2ECC71"></i>Ready 578</span><span><i style="background:#555550"></i>Not started 20</span><span><i style="background:#E74C3C"></i>Failed 12</span><span><i style="background:#E67E22"></i>Manual review 8</span></div>
+</div>
+</div>
 </div>
 
 <div class="dv"></div>
 
 <!-- TVS DEEP DIVE -->
 <div class="s">
-<div class="sh"><h2>TVS component breakdown</h2><span class="p pr">C2 is the bottleneck</span></div>
+<div class="sh"><h2>TVS component breakdown</h2><span class="p pr">C2 is the bottleneck</span><span class="p pb">Sheets</span></div>
+<div class="g2" style="margin-bottom:12px">
+<div class="cc">
+<div class="ct">C1 - Trace type component</div>
+<div class="prose">
+<p>Scores each trace based on what type it is. Withdrawals are the most valuable to clients because they show where funds leave an exchange, so they score highest.</p>
+<p><strong>Withdrawal = 3pts</strong> | Deposit = 2pts | Wdr PSP = 1pt</p>
+<p>Q1 avg: <strong>2.42</strong>/trace (gap to max: 0.58). Lifting WIS pushes this toward 3.0.</p>
+</div>
+</div>
+<div class="cc">
+<div class="ct">C2 - Discovery component</div>
+<div class="prose">
+<p>Scores each trace based on whether the entity has been traced before. Withdrawal retraces are most valuable because they add new outflow data to an already-known entity.</p>
+<p><strong>Wdr retrace = 3pts</strong> | First-time discovery = 2pts | Dep retrace = 1pt</p>
+<p>Q1 avg: <strong>1.96</strong>/trace (gap to max: 1.04). This is the bottleneck. 25% of Q1 traces were deposit retraces (1pt), dragging C2 well below 2.0.</p>
+</div>
+</div>
+</div>
 <div class="fb">
-<span class="fl">Why TVS is stuck below 3.0</span>
+<span class="fl">Why TVS is below target</span>
 C1 avg/trace: 2.42 (gap: 0.58) -- needs more withdrawals<br>
-C2 avg/trace: 2.03 (gap: <strong>0.97</strong>) -- needs more withdrawal retraces<br>
-90% of Q1 traces are first-time discoveries (2pts on C2). Only wdr retraces score 3pts.<br>
-<strong>Structural ceiling ~2.50 with discovery-heavy work. 3.0 requires 100% wdr retraces.</strong>
+C2 avg/trace: 1.96 (gap: <strong>1.04</strong>) -- needs more withdrawal retraces<br>
+55% first-time (2pts), 25% deposit retraces (1pt), 20% wdr retraces (3pts). Dep retraces are the biggest C2 drag.<br>
+<strong>Structural ceiling ~2.50 with current mix. Shifting to wdr-heavy retrace batches in Q2.</strong>
 </div>
 <div class="g2">
 <div class="cc">
 <div class="ct">C2 composition (why C2 is near 2.0)</div>
 <div class="cw" style="height:260px"><canvas id="c4"></canvas></div>
-<div class="lg"><span><i style="background:#2ECC71"></i>First-time 2pts (90%)</span><span><i style="background:#9B59B6"></i>Wdr retrace 3pts (7%)</span><span><i style="background:#555550"></i>Dep retrace 1pt (4%)</span></div>
+<div class="lg"><span><i style="background:#2ECC71"></i>First-time 2pts (55%)</span><span><i style="background:#9B59B6"></i>Wdr retrace 3pts (20%)</span><span><i style="background:#555550"></i>Dep retrace 1pt (25%)</span></div>
 </div>
 <div class="cc">
-<div class="ct">C1 vs C2 per trace by tracer (March)</div>
+<div class="ct">C1 vs C2 per tracer (March)</div>
 <div class="cw" style="height:260px"><canvas id="c5"></canvas></div>
 <div class="lg"><span><i style="background:#3498DB"></i>C1/trace</span><span><i style="background:#E67E22"></i>C2/trace</span></div>
 </div>
 </div>
 </div>
 
-<!-- FULL Q1 TVS TABLE -->
+<!-- Q1 TVS TABLE -->
 <div class="s">
-<div class="sh"><h2>Q1 per-tracer TVS detail</h2></div>
+<div class="sh"><h2>Q1 per-tracer TVS</h2><span class="p pb">Sheets</span></div>
 <div class="cc">
 <table class="tbl">
 <thead><tr><th></th><th>Tracer</th><th class="n">Trc</th><th class="n">Dep</th><th class="n">Wdr</th><th class="n">Dir</th><th class="n">1st</th><th class="n">D-R</th><th class="n">W-R</th><th class="n">C1</th><th class="n">C2</th><th class="n">TVS</th></tr></thead>
 <tbody>
-<tr class="ar2"><td colspan="3" style="color:var(--orange)">January</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.10</td></tr>
-<tr><td></td><td class="tn">Denis</td><td class="n">42</td><td class="n">23</td><td class="n">19</td><td class="n">0</td><td class="n">40</td><td class="n">0</td><td class="n">2</td><td class="n">103</td><td class="n">86</td><td class="n">2.25</td></tr>
-<tr><td></td><td class="tn">Hilal</td><td class="n">61</td><td class="n">43</td><td class="n">10</td><td class="n">7</td><td class="n">61</td><td class="n">0</td><td class="n">0</td><td class="n">132</td><td class="n">122</td><td class="n">2.08</td></tr>
-<tr><td></td><td class="tn">Ricardo</td><td class="n">36</td><td class="n">21</td><td class="n">6</td><td class="n">9</td><td class="n">27</td><td class="n">9</td><td class="n">0</td><td class="n">78</td><td class="n">63</td><td class="n">1.96</td></tr>
-<tr class="ar2"><td colspan="3" style="color:var(--orange)">February</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.24</td></tr>
-<tr><td></td><td class="tn">Hilal</td><td class="n">39</td><td class="n">9</td><td class="n">28</td><td class="n">2</td><td class="n">39</td><td class="n">0</td><td class="n">0</td><td class="n">106</td><td class="n">78</td><td class="n" style="color:var(--green)">2.36</td></tr>
-<tr><td></td><td class="tn">Denis</td><td class="n">5</td><td class="n">2</td><td class="n">3</td><td class="n">0</td><td class="n">3</td><td class="n">0</td><td class="n">2</td><td class="n">13</td><td class="n">12</td><td class="n" style="color:var(--green)">2.50</td></tr>
-<tr><td></td><td class="tn">Osama</td><td class="n">19</td><td class="n">11</td><td class="n">8</td><td class="n">0</td><td class="n">17</td><td class="n">0</td><td class="n">2</td><td class="n">46</td><td class="n">40</td><td class="n">2.26</td></tr>
-<tr><td></td><td class="tn">Ricardo</td><td class="n">50</td><td class="n">38</td><td class="n">12</td><td class="n">0</td><td class="n">50</td><td class="n">0</td><td class="n">0</td><td class="n">112</td><td class="n">100</td><td class="n">2.12</td></tr>
-<tr class="ar2"><td colspan="3" style="color:var(--orange)">March</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.28</td></tr>
-<tr><td></td><td class="tn">Bloom</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">9</td><td class="n">27</td><td class="n">27</td><td class="n" style="color:var(--green)">3.00</td></tr>
-<tr><td></td><td class="tn">Ricardo</td><td class="n">24</td><td class="n">5</td><td class="n">19</td><td class="n">0</td><td class="n">23</td><td class="n">0</td><td class="n">1</td><td class="n">67</td><td class="n">49</td><td class="n" style="color:var(--green)">2.42</td></tr>
-<tr><td></td><td class="tn">Denis</td><td class="n">58</td><td class="n">24</td><td class="n">34</td><td class="n">0</td><td class="n">52</td><td class="n">0</td><td class="n">6</td><td class="n">150</td><td class="n">122</td><td class="n">2.34</td></tr>
-<tr><td></td><td class="tn">Tuomas</td><td class="n">20</td><td class="n">11</td><td class="n">9</td><td class="n">0</td><td class="n">19</td><td class="n">0</td><td class="n">1</td><td class="n">49</td><td class="n">41</td><td class="n">2.25</td></tr>
-<tr><td></td><td class="tn">Priscilla</td><td class="n">55</td><td class="n">28</td><td class="n">27</td><td class="n">0</td><td class="n">33</td><td class="n">11</td><td class="n">11</td><td class="n">137</td><td class="n">110</td><td class="n">2.25</td></tr>
+<tr class="ar2"><td colspan="3" style="color:var(--orange)">January</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.03</td></tr>
+<tr><td></td><td class="tn">Denis</td><td class="n">42</td><td class="n">23</td><td class="n">19</td><td class="n">0</td><td class="n">20</td><td class="n">14</td><td class="n">8</td><td class="n">103</td><td class="n">78</td><td class="n">2.15</td></tr>
+<tr><td></td><td class="tn">Ricardo</td><td class="n">36</td><td class="n">21</td><td class="n">6</td><td class="n">9</td><td class="n">36</td><td class="n">0</td><td class="n">0</td><td class="n">78</td><td class="n">72</td><td class="n">2.08</td></tr>
+<tr><td></td><td class="tn">Hilal</td><td class="n">61</td><td class="n">43</td><td class="n">10</td><td class="n">7</td><td class="n">40</td><td class="n">21</td><td class="n">0</td><td class="n">132</td><td class="n">101</td><td class="n">1.91</td></tr>
+<tr class="ar2"><td colspan="3" style="color:var(--orange)">February</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.27</td></tr>
+<tr><td></td><td class="tn">Hilal</td><td class="n">39</td><td class="n">9</td><td class="n">28</td><td class="n">2</td><td class="n">0</td><td class="n">11</td><td class="n">28</td><td class="n">106</td><td class="n">95</td><td class="n" style="color:var(--green)">2.58</td></tr>
+<tr><td></td><td class="tn">Osama</td><td class="n">19</td><td class="n">11</td><td class="n">8</td><td class="n">0</td><td class="n">19</td><td class="n">0</td><td class="n">0</td><td class="n">46</td><td class="n">38</td><td class="n">2.21</td></tr>
+<tr><td></td><td class="tn">Denis</td><td class="n">5</td><td class="n">2</td><td class="n">3</td><td class="n">0</td><td class="n">2</td><td class="n">2</td><td class="n">1</td><td class="n">13</td><td class="n">9</td><td class="n">2.20</td></tr>
+<tr><td></td><td class="tn">Ricardo</td><td class="n">50</td><td class="n">38</td><td class="n">12</td><td class="n">0</td><td class="n">44</td><td class="n">6</td><td class="n">0</td><td class="n">112</td><td class="n">94</td><td class="n">2.06</td></tr>
+<tr class="ar2"><td colspan="3" style="color:var(--orange)">March</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.24</td></tr>
+<tr><td></td><td class="tn">Bloom</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td class="n">0</td><td class="n">0</td><td class="n">27</td><td class="n">18</td><td class="n" style="color:var(--green)">2.50</td></tr>
+<tr><td></td><td class="tn">Ricardo</td><td class="n">24</td><td class="n">5</td><td class="n">19</td><td class="n">0</td><td class="n">19</td><td class="n">0</td><td class="n">5</td><td class="n">67</td><td class="n">53</td><td class="n" style="color:var(--green)">2.50</td></tr>
+<tr><td></td><td class="tn">Denis</td><td class="n">58</td><td class="n">24</td><td class="n">34</td><td class="n">0</td><td class="n">6</td><td class="n">24</td><td class="n">28</td><td class="n">150</td><td class="n">120</td><td class="n">2.33</td></tr>
+<tr><td></td><td class="tn">Priscilla</td><td class="n">55</td><td class="n">28</td><td class="n">27</td><td class="n">0</td><td class="n">0</td><td class="n">28</td><td class="n">27</td><td class="n">137</td><td class="n">109</td><td class="n">2.24</td></tr>
 <tr><td></td><td class="tn">Juan Jose</td><td class="n">34</td><td class="n">16</td><td class="n">15</td><td class="n">3</td><td class="n">34</td><td class="n">0</td><td class="n">0</td><td class="n">83</td><td class="n">68</td><td class="n">2.22</td></tr>
-<tr><td></td><td class="tn">Hilal</td><td class="n">68</td><td class="n">45</td><td class="n">22</td><td class="n">1</td><td class="n">68</td><td class="n">0</td><td class="n">0</td><td class="n">158</td><td class="n">136</td><td class="n" style="color:var(--red)">2.16</td></tr>
+<tr><td></td><td class="tn">Tuomas</td><td class="n">20</td><td class="n">11</td><td class="n">9</td><td class="n">0</td><td class="n">1</td><td class="n">11</td><td class="n">8</td><td class="n">49</td><td class="n">37</td><td class="n">2.15</td></tr>
+<tr><td></td><td class="tn">Hilal</td><td class="n">68</td><td class="n">45</td><td class="n">22</td><td class="n">1</td><td class="n">56</td><td class="n">11</td><td class="n">1</td><td class="n">158</td><td class="n">126</td><td class="n" style="color:var(--red)">2.09</td></tr>
 </tbody>
 </table>
 </div>
@@ -220,26 +232,25 @@ C2 avg/trace: 2.03 (gap: <strong>0.97</strong>) -- needs more withdrawal retrace
 <div class="ct">NowPayments batch deposits</div>
 <div class="prose">
 <p>Deposit funding is now automated via NowPayments batch CSV uploads. The master operations sheet generates a batch file with amounts set 10% above minimum thresholds to absorb fees and slippage.</p>
-<p><strong>Impact:</strong> Eliminates manual wallet-by-wallet funding. A batch of 8+ deposits can be submitted in one action instead of individually. Reduces deposit turnaround from days to hours.</p>
-<p><strong>Status:</strong> Live on the master ops sheet. Batch generation, status tracking, and freelancer sheet sync all automated via GAS.</p>
+<p><strong>Impact:</strong> Eliminates manual wallet-by-wallet funding. A full batch of deposits submitted in one action. Reduces deposit turnaround from days to hours.</p>
+<p><strong>Status:</strong> Live on the master ops sheet.</p>
 </div>
 </div>
 <div class="cc">
 <div class="ct">QC-gated payment model</div>
 <div class="prose">
-<p>Replacing hourly pay with per-trace, QC-approved payments. Freelancers get paid only for traces that pass QC with complete metadata. Upwork contracts convert from hourly to fixed-price milestones.</p>
+<p>Replacing hourly pay with per-trace, QC-approved payments. Freelancers get paid only for traces that pass QC with complete metadata.</p>
 <p><strong>Rates:</strong> New entity deposit $5.00, additional deposit $3.50, withdrawal $4.00, withdrawal PSP $4.50, entity research (pre-approved) $1.50, metadata bonus $0.50/trace.</p>
-<p><strong>Impact:</strong> Aligns pay with output. Feb simulation showed high-output tracers earning more, low-output/high-hour tracers earning less. Eliminates the $38-45/trace outliers.</p>
-<p><strong>Status:</strong> Proposal complete. Pending budget sign-off from Lucy/Rhea. Pilot planned with 2-3 Upwork freelancers in April.</p>
+<p><strong>Impact:</strong> Aligns pay with output. Eliminates $38-45/trace outliers seen in Q1.</p>
+<p><strong>Status:</strong> Pending budget sign-off. Pilot planned April.</p>
 </div>
 </div>
 <div class="cc">
 <div class="ct">Sheet automations</div>
 <div class="prose">
-<p>The master operations sheet now syncs status changes bidirectionally with freelancer sheets. When a deposit is marked sent on master, it updates the freelancer's Transactions tab automatically.</p>
-<p><strong>Ingestion sweep:</strong> 6-hour time-driven sweep of all freelancer sheets for QC Ready rows, with deduplication and append to the master ingestion sheet.</p>
-<p><strong>Fee tracker:</strong> 12-file GAS codebase recovering blockchain dates and fees via block explorer APIs across 25+ chains.</p>
-<p><strong>Next:</strong> Weekly metrics script auto-calculates TVS, WIS, and traces per hour for every freelancer each Monday. QC quality tracking to be integrated once per-trace model is live.</p>
+<p>Master ops sheet syncs status changes bidirectionally with freelancer sheets. Ingestion sweep runs every 6 hours across all freelancer sheets.</p>
+<p>Fee tracker recovers blockchain dates and fees via block explorer APIs across 25+ chains.</p>
+<p><strong>Next:</strong> Weekly metrics auto-calculates TVS, WIS, traces per hour every Monday. QC quality tracking to be integrated once per-trace model is live.</p>
 </div>
 </div>
 </div>
@@ -251,25 +262,25 @@ C2 avg/trace: 2.03 (gap: <strong>0.97</strong>) -- needs more withdrawal retrace
 <div class="s">
 <div class="sh"><h2>Q2 outlook</h2></div>
 <div class="prose">
-<p>Entity discovery will be deprioritised for Q2. The focus shifts to retracing already-traced entities with withdrawal-heavy batches. This directly addresses the C2 bottleneck: retrace work scores higher on C2 than first-time discovery, and when weighted toward withdrawals, it lifts both C1 and C2 simultaneously.</p>
-<p>QC-gated payments, once approved, will add a QC pass rate metric to future reports. The target is 90%+ first-time pass rate (KR1). This will appear as a new section in the Q2 dashboard alongside TVS and WIS.</p>
-<p>The NowPayments batch system and sheet automations are already live. The remaining automation gap is the weekly metrics script, which will eliminate manual data collection for these reports.</p>
+<p>Entity discovery deprioritised for Q2. Focus shifts to retracing already-traced entities with withdrawal-heavy batches. This directly addresses the C2 bottleneck: retrace work scores higher on C2 than first-time discovery, and when weighted toward withdrawals, lifts both C1 and C2.</p>
+<p>QC-gated payments, once approved, will add a QC pass rate metric to future reports. Target: 90%+ first-time pass rate. This will appear as a new section in the Q2 dashboard.</p>
 </div>
 </div>
 
-<div class="nt">Source: freelancer Google Sheets (Transactions + Already Traced tabs). Retool export shows higher counts for months where data was also ingested internally. TVS uses the Already Traced tab for first-time vs retrace classification. Cost figures from monthly freelancer tracker CSVs (Jan-Mar 2026).</div>
+<div class="nt">Retool export (3 Apr 2026) is the source of truth for total traces, entities, and QC status. Freelancer Google Sheets (Transactions tabs) provide per-tracer attribution, hours, and cost data. TVS first-time vs retrace classification uses Retool metadata entity creation dates (Committed date time). The +100 trace delta between Retool (620) and freelancer sheets (520) represents data ingested directly by the internal ops team. Cost figures from monthly freelancer tracker CSVs (Jan-Mar 2026).</div>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
 Chart.defaults.color='#888880';Chart.defaults.borderColor='#2A2A2A';Chart.defaults.font.family="'DM Sans',sans-serif";
-var g='#1F1F1F',t='#888880';
-new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'D',data:[87,60,129],backgroundColor:'#3498DB',stack:'a',order:2},{label:'W',data:[35,51,135],backgroundColor:'#2ECC71',stack:'a',order:2},{label:'Dir',data:[16,2,4],backgroundColor:'#555550',stack:'a',order:2},{label:'WIS',data:[25,45,50],type:'line',borderColor:'#E67E22',pointRadius:5,pointBackgroundColor:'#E67E22',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}},y1:{position:'right',min:0,max:70,grid:{display:false},ticks:{callback:function(v){return v+'%'}}}}}});
-new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'C1',data:[2.25,2.45,2.50],backgroundColor:'#3498DB',order:2},{label:'C2',data:[1.95,2.04,2.06],backgroundColor:'#E67E22',order:2},{label:'TVS',data:[2.10,2.24,2.28],type:'line',borderColor:'#9B59B6',borderWidth:3,pointRadius:6,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3},{label:'Tgt',data:[3,3,3],type:'line',borderColor:'rgba(46,204,113,0.3)',borderDash:[6,4],pointRadius:0,yAxisID:'y1',order:0,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{display:false},y1:{min:1.5,max:3.2,grid:{color:g},position:'left'}}}});
-new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'Tr',data:[139,113,268],backgroundColor:'rgba(46,204,113,0.2)',borderColor:'#2ECC71',borderWidth:1,yAxisID:'y',order:2},{label:'$/tr',data:[7.84,8.72,4.47],type:'line',borderColor:'#9B59B6',pointRadius:5,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:g},title:{display:true,text:'Traces',color:t,font:{size:11}}},y1:{position:'right',grid:{display:false},ticks:{callback:function(v){return'$'+v.toFixed(0)}},title:{display:true,text:'$/trace',color:'#9B59B6',font:{size:11}}}}}});
-new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'1st',data:[128,109,229],backgroundColor:'#2ECC71',stack:'a'},{label:'W-R',data:[2,4,28],backgroundColor:'#9B59B6',stack:'a'},{label:'D-R',data:[9,0,11],backgroundColor:'#555550',stack:'a'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}}}}});
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Bloom','Ricardo','Denis','Tuomas','Priscilla','Juan Jose','Hilal'],datasets:[{label:'C1',data:[3.00,2.79,2.59,2.45,2.49,2.44,2.32],backgroundColor:'#3498DB'},{label:'C2',data:[3.00,2.04,2.10,2.05,2.00,2.00,2.00],backgroundColor:'#E67E22'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{min:1.5,max:3.2,grid:{color:g}}}}});
+var g='#1F1F1F';
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'D',data:[114,82,179],backgroundColor:'#3498DB',stack:'a',order:2},{label:'W',data:[29,51,102],backgroundColor:'#2ECC71',stack:'a',order:2},{label:'Dir',data:[32,14,14],backgroundColor:'#555550',stack:'a',order:2},{label:'WIS',data:[16,34,35],type:'line',borderColor:'#E67E22',pointRadius:5,pointBackgroundColor:'#E67E22',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}},y1:{position:'right',min:0,max:60,grid:{display:false},ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'C1',data:[2.25,2.45,2.50],backgroundColor:'#3498DB',order:2},{label:'C2',data:[1.81,2.09,1.98],backgroundColor:'#E67E22',order:2},{label:'TVS',data:[2.03,2.27,2.24],type:'line',borderColor:'#9B59B6',borderWidth:3,pointRadius:6,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3},{label:'Tgt',data:[3,3,3],type:'line',borderColor:'rgba(46,204,113,0.3)',borderDash:[6,4],pointRadius:0,yAxisID:'y1',order:0,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{display:false},y1:{min:1.5,max:3.2,grid:{color:g},position:'left'}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'Tr',data:[177,148,295],backgroundColor:'rgba(46,204,113,0.2)',borderColor:'#2ECC71',borderWidth:1,yAxisID:'y',order:2},{label:'$/tr',data:[6.15,6.66,4.06],type:'line',borderColor:'#9B59B6',pointRadius:5,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:g}},y1:{position:'right',grid:{display:false},ticks:{callback:function(v){return'$'+v.toFixed(0)}}}}}});
+new Chart(document.getElementById('cqc'),{type:'doughnut',data:{labels:['Ready','Not started','Failed','Manual review','Pending'],datasets:[{data:[578,20,12,8,2],backgroundColor:['#2ECC71','#555550','#E74C3C','#E67E22','#3498DB'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'1st',data:[96,65,125],backgroundColor:'#2ECC71',stack:'a'},{label:'W-R',data:[8,29,69],backgroundColor:'#9B59B6',stack:'a'},{label:'D-R',data:[35,19,74],backgroundColor:'#555550',stack:'a'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Bloom','Ricardo','Denis','Tuomas','Priscilla','Juan Jose','Hilal'],datasets:[{label:'C1',data:[3.00,2.79,2.59,2.45,2.49,2.44,2.32],backgroundColor:'#3498DB'},{label:'C2',data:[2.00,2.21,2.07,1.85,1.98,2.00,1.85],backgroundColor:'#E67E22'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{min:1.5,max:3.2,grid:{color:g}}}}});
 </script>
 </body>
 </html>
