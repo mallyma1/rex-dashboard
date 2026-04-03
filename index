@@ -3,268 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REX Q1 2026 Dashboard</title>
+<title>REX Q1 2026 Report</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0D0D0D;--card:#141414;--card2:#1A1A1A;--border:#2A2A2A;--text:#E8E6E1;--muted:#888880;--dim:#555550;--orange:#F5A623;--orange-dim:#3D2A0E;--green:#2ECC71;--green-dim:#0E3D22;--red:#E74C3C;--red-dim:#3D0E0E;--blue:#3498DB;--blue-dim:#0E2A3D;--purple:#9B59B6;--purple-dim:#2A0E3D;--teal:#1ABC9C;--teal-dim:#0E3D33;--coral:#E67E22;--mono:'JetBrains Mono',monospace;--sans:'DM Sans',sans-serif;--radius:10px;--radius-lg:14px}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;min-height:100vh;padding:0}
-.wrap{max-width:1200px;margin:0 auto;padding:2rem 2.5rem 4rem}
+:root{--bg:#0D0D0D;--card:#141414;--card2:#1A1A1A;--border:#2A2A2A;--text:#E8E6E1;--muted:#888880;--dim:#555550;--orange:#F5A623;--orange-dim:#3D2A0E;--green:#2ECC71;--green-dim:#0E3D22;--red:#E74C3C;--red-dim:#3D0E0E;--blue:#3498DB;--blue-dim:#0E2A3D;--purple:#9B59B6;--purple-dim:#2A0E3D;--teal:#1ABC9C;--teal-dim:#0E3D33;--coral:#E67E22;--mono:'JetBrains Mono',monospace;--sans:'DM Sans',sans-serif;--r:10px;--rl:14px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;padding:0}
+.w{max-width:1200px;margin:0 auto;padding:2rem 2.5rem 4rem}
 .hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem;border-bottom:1px solid var(--border);padding-bottom:1.5rem}
 .hdr h1{font-size:1.75rem;font-weight:700;letter-spacing:-0.02em}
 .hdr h1 span{color:var(--orange)}
 .hdr .meta{font-size:0.8rem;color:var(--muted)}
-.section{margin-bottom:2.5rem}
-.section-hdr{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
-.section-hdr h2{font-size:1.1rem;font-weight:600;letter-spacing:-0.01em}
-.section-hdr .pill{font-size:0.65rem;font-family:var(--mono);padding:3px 10px;border-radius:20px;font-weight:500}
-.pill-orange{background:var(--orange-dim);color:var(--orange)}
-.pill-green{background:var(--green-dim);color:var(--green)}
-.pill-red{background:var(--red-dim);color:var(--red)}
-.pill-blue{background:var(--blue-dim);color:var(--blue)}
-.grid{display:grid;gap:12px}
-.g4{grid-template-columns:repeat(4,1fr)}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-.mc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;position:relative;overflow:hidden}
+.s{margin-bottom:2.5rem}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.sh h2{font-size:1.1rem;font-weight:600}
+.p{font-size:0.65rem;font-family:var(--mono);padding:3px 10px;border-radius:20px;font-weight:500}
+.po{background:var(--orange-dim);color:var(--orange)}.pg{background:var(--green-dim);color:var(--green)}.pr{background:var(--red-dim);color:var(--red)}.pb{background:var(--blue-dim);color:var(--blue)}.pt{background:var(--teal-dim);color:var(--teal)}.pp{background:var(--purple-dim);color:var(--purple)}
+.g{display:grid;gap:12px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;position:relative;overflow:hidden}
 .mc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.mc.accent-orange::before{background:var(--orange)}
-.mc.accent-green::before{background:var(--green)}
-.mc.accent-blue::before{background:var(--blue)}
-.mc.accent-purple::before{background:var(--purple)}
-.mc.accent-red::before{background:var(--red)}
-.mc.accent-teal::before{background:var(--teal)}
-.mc-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
-.mc-val{font-size:1.65rem;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
-.mc-sub{font-size:0.72rem;margin-top:3px}
-.up{color:var(--green)}.dn{color:var(--red)}.warn{color:var(--orange)}.muted{color:var(--muted)}
-.chart-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 22px}
-.chart-title{font-size:0.8rem;font-weight:500;color:var(--muted);margin-bottom:12px}
-.chart-wrap{position:relative;width:100%}
-.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:0.7rem;color:var(--muted)}
-.legend span{display:flex;align-items:center;gap:5px}
-.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.ao::before{background:var(--orange)}.ag::before{background:var(--green)}.ab::before{background:var(--blue)}.ap::before{background:var(--purple)}.ar::before{background:var(--red)}.at::before{background:var(--teal)}
+.ml{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.mv{font-size:1.65rem;font-weight:700;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.ms{font-size:0.72rem;margin-top:3px}
+.up{color:var(--green)}.dn{color:var(--red)}.wa{color:var(--orange)}.mu{color:var(--muted)}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:20px 22px}
+.ct{font-size:0.8rem;font-weight:500;color:var(--muted);margin-bottom:12px}
+.cw{position:relative;width:100%}
+.lg{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:0.7rem;color:var(--muted)}
+.lg span{display:flex;align-items:center;gap:5px}
+.lg i{width:10px;height:10px;border-radius:3px;display:inline-block}
 .tbl{width:100%;border-collapse:collapse;font-size:0.78rem}
 .tbl th{text-align:left;padding:8px 10px;color:var(--muted);font-weight:500;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.05em;border-bottom:1px solid var(--border)}
 .tbl td{padding:8px 10px;border-bottom:1px solid #1F1F1F}
 .tbl tr:last-child td{border-bottom:none}
 .tbl tr:hover td{background:#1A1A1A}
 .n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:0.75rem}
-.tbl .tracer-name{font-weight:500}
-.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:0.6rem;font-weight:600;font-family:var(--mono)}
-.badge-green{background:var(--green-dim);color:var(--green)}
-.badge-orange{background:var(--orange-dim);color:var(--orange)}
-.badge-red{background:var(--red-dim);color:var(--red)}
-.badge-blue{background:var(--blue-dim);color:var(--blue)}
-.divider{height:1px;background:var(--border);margin:2rem 0}
-.formula-box{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;font-family:var(--mono);font-size:0.78rem;line-height:2;margin-bottom:1rem}
-.formula-box .fl{font-family:var(--sans);font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:4px}
-.formula-box strong{color:var(--orange)}
-.agg-row td{background:var(--card2)!important;font-weight:600}
-.agg-row .mc-val{color:var(--orange)}
-.note{font-size:0.72rem;color:var(--dim);font-style:italic;margin-top:1.5rem;padding-top:1rem;border-top:1px solid #1A1A1A}
-@media(max-width:800px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}.wrap{padding:1.5rem 1rem 3rem}}
+.tn{font-weight:500}
+.bd{display:inline-block;padding:2px 8px;border-radius:20px;font-size:0.6rem;font-weight:600;font-family:var(--mono)}
+.bg{background:var(--green-dim);color:var(--green)}.bo{background:var(--orange-dim);color:var(--orange)}.br{background:var(--red-dim);color:var(--red)}.bb{background:var(--blue-dim);color:var(--blue)}
+.dv{height:1px;background:var(--border);margin:2rem 0}
+.fb{background:var(--card2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;font-family:var(--mono);font-size:0.78rem;line-height:2;margin-bottom:1rem}
+.fb .fl{font-family:var(--sans);font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:4px}
+.fb strong{color:var(--orange)}
+.ar2 td{background:var(--card2)!important;font-weight:600}
+.prose{font-size:0.82rem;line-height:1.7;color:var(--text);max-width:700px}
+.prose p{margin-bottom:0.8rem}
+.prose strong{color:var(--orange);font-weight:600}
+.nt{font-size:0.72rem;color:var(--dim);font-style:italic;margin-top:1.5rem;padding-top:1rem;border-top:1px solid #1A1A1A}
+@media(max-width:800px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}.w{padding:1.5rem 1rem 3rem}}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="w">
 
 <div class="hdr">
-<h1><span>REX</span> Q1 2026 Dashboard</h1>
-<div class="meta">Freelancer output | Data as of 3 Apr 2026</div>
+<h1><span>REX</span> Q1 2026 Report</h1>
+<div class="meta">Freelancer tracing output | 3 Apr 2026 | Source: freelancer Google Sheets</div>
 </div>
 
-<div class="section">
-<div class="section-hdr"><h2>Q1 overview</h2><span class="pill pill-orange">Jan - Mar 2026</span></div>
-<div class="grid g4">
-<div class="mc accent-orange"><div class="mc-label">Total traces</div><div class="mc-val">520</div><div class="mc-sub muted">276D / 221W / 22Dir</div></div>
-<div class="mc accent-purple"><div class="mc-label">TVS (aggregate)</div><div class="mc-val">2.23</div><div class="mc-sub warn">Target: 3.0</div></div>
-<div class="mc accent-green"><div class="mc-label">Total spend</div><div class="mc-val">$3,271</div><div class="mc-sub up">$5.63/trace avg</div></div>
-<div class="mc accent-blue"><div class="mc-label">Active tracers (Mar)</div><div class="mc-val">7</div><div class="mc-sub muted">13 on payroll</div></div>
+<!-- METRIC DEFINITIONS -->
+<div class="s">
+<div class="sh"><h2>Key metrics explained</h2></div>
+<div class="g2">
+<div class="cc">
+<div class="ct">WIS - Withdrawal Impact Score</div>
+<div class="prose">
+<p>Percentage of total traces that are withdrawals. Withdrawals are harder to obtain than deposits and more valuable to clients because they reveal where funds flow out of an exchange.</p>
+<p><strong>Formula:</strong> Withdrawals / Total Traces x 100</p>
+<p><strong>Target:</strong> 40-50%</p>
 </div>
 </div>
-
-<div class="section">
-<div class="section-hdr"><h2>Month-on-month</h2></div>
-<div class="grid g2">
-<div class="chart-card">
-<div class="chart-title">Traces by type + WIS trend</div>
-<div class="chart-wrap" style="height:300px"><canvas id="momChart"></canvas></div>
-<div class="legend">
-<span><i style="background:#3498DB"></i>Deposits</span>
-<span><i style="background:#2ECC71"></i>Withdrawals</span>
-<span><i style="background:#555550"></i>Direct</span>
-<span><i style="background:#E67E22"></i>WIS %</span>
-</div>
-</div>
-<div class="chart-card">
-<div class="chart-title">TVS trend (C1 vs C2 per trace)</div>
-<div class="chart-wrap" style="height:300px"><canvas id="tvsChart"></canvas></div>
-<div class="legend">
-<span><i style="background:#9B59B6"></i>TVS</span>
-<span><i style="background:#3498DB"></i>C1/trace</span>
-<span><i style="background:#E67E22"></i>C2/trace</span>
-<span><i style="background:rgba(46,204,113,0.3)"></i>Target 3.0</span>
+<div class="cc">
+<div class="ct">TVS - Trace Value Score</div>
+<div class="prose">
+<p>Quality-weighted score that rewards higher-value trace types (withdrawals over deposits) and higher-value discovery types (retracing already-known entities over first-time discovery).</p>
+<p><strong>Formula:</strong> TVS = (C1 + C2) / 2 / total traces</p>
+<p><strong>C1 (trace type):</strong> Deposit = 2pts, Withdrawal = 3pts, Wdr PSP = 1pt</p>
+<p><strong>C2 (discovery):</strong> Dep retrace = 1pt, First-time = 2pts, Wdr retrace = 3pts</p>
+<p><strong>Target:</strong> 3.0 (2025 baseline: 2.1)</p>
 </div>
 </div>
 </div>
 </div>
 
-<div class="section">
-<div class="section-hdr"><h2>Cost efficiency</h2><span class="pill pill-green">-56% cost/trace Q1</span></div>
-<div class="grid g3">
-<div class="mc accent-green"><div class="mc-label">Jan</div><div class="mc-val">$10.08<span style="font-size:0.7rem;font-weight:400">/trace</span></div><div class="mc-sub muted">179h / $1,089</div></div>
-<div class="mc accent-green"><div class="mc-label">Feb</div><div class="mc-val">$8.72<span style="font-size:0.7rem;font-weight:400">/trace</span></div><div class="mc-sub muted">85h / $985</div></div>
-<div class="mc accent-green"><div class="mc-label">Mar</div><div class="mc-val">$4.47<span style="font-size:0.7rem;font-weight:400">/trace</span></div><div class="mc-sub up">119h / $1,198</div></div>
+<div class="dv"></div>
+
+<!-- Q1 OVERVIEW -->
+<div class="s">
+<div class="sh"><h2>Q1 overview</h2><span class="p po">Jan - Mar 2026</span></div>
+<div class="g4">
+<div class="mc ao"><div class="ml">Total traces</div><div class="mv">520</div><div class="ms mu">276D / 221W / 22Dir</div></div>
+<div class="mc ap"><div class="ml">TVS</div><div class="mv">2.23</div><div class="ms wa">C1: 2.42 / C2: 2.03</div></div>
+<div class="mc ag"><div class="ml">Total spend</div><div class="mv">$3,271</div><div class="ms up">$6.29/trace avg</div></div>
+<div class="mc ab"><div class="ml">Tracers (Mar)</div><div class="mv">7</div><div class="ms mu">13 on payroll</div></div>
 </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="section">
-<div class="section-hdr"><h2>March deep dive</h2><span class="pill pill-blue">268 traces / 7 tracers</span></div>
-<div class="grid g4">
-<div class="mc accent-orange"><div class="mc-label">Mar traces</div><div class="mc-val">268</div><div class="mc-sub up">+137% vs Feb</div></div>
-<div class="mc accent-purple"><div class="mc-label">Mar TVS</div><div class="mc-val">2.28</div><div class="mc-sub muted">C1: 2.50 / C2: 2.06</div></div>
-<div class="mc accent-green"><div class="mc-label">Mar WIS</div><div class="mc-val">50.4%</div><div class="mc-sub up">In target (40-50%)</div></div>
-<div class="mc accent-teal"><div class="mc-label">Unique entities</div><div class="mc-val">13</div><div class="mc-sub muted">Across 7 tracers</div></div>
+<!-- MONTH ON MONTH -->
+<div class="s">
+<div class="sh"><h2>Month-on-month progress</h2></div>
+<div class="g2">
+<div class="cc">
+<div class="ct">Traces by type + WIS trend</div>
+<div class="cw" style="height:300px"><canvas id="c1"></canvas></div>
+<div class="lg"><span><i style="background:#3498DB"></i>Deposits</span><span><i style="background:#2ECC71"></i>Withdrawals</span><span><i style="background:#555550"></i>Direct</span><span><i style="background:#E67E22"></i>WIS %</span></div>
 </div>
-</div>
-
-<div class="section">
-<div class="grid g2">
-<div class="chart-card">
-<div class="chart-title">March weekly output</div>
-<div class="chart-wrap" style="height:280px"><canvas id="weekChart"></canvas></div>
-<div class="legend">
-<span><i style="background:#3498DB"></i>Deposits</span>
-<span><i style="background:#2ECC71"></i>Withdrawals</span>
-<span><i style="background:#E67E22"></i>WIS %</span>
-</div>
-</div>
-<div class="chart-card">
-<div class="chart-title">March per tracer (TVS in label)</div>
-<div class="chart-wrap" style="height:280px"><canvas id="tracerChart"></canvas></div>
-<div class="legend">
-<span><i style="background:#3498DB"></i>Deposits</span>
-<span><i style="background:#2ECC71"></i>Withdrawals</span>
-<span><i style="background:#555550"></i>Direct</span>
-</div>
+<div class="cc">
+<div class="ct">TVS trend (C1 vs C2 per trace)</div>
+<div class="cw" style="height:300px"><canvas id="c2"></canvas></div>
+<div class="lg"><span><i style="background:#9B59B6"></i>TVS</span><span><i style="background:#3498DB"></i>C1/trace</span><span><i style="background:#E67E22"></i>C2/trace</span><span><i style="background:rgba(46,204,113,0.3)"></i>Target 3.0</span></div>
 </div>
 </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="section">
-<div class="section-hdr"><h2>TVS component breakdown</h2><span class="pill pill-red">C2 is the bottleneck</span></div>
-<div class="formula-box">
-<span class="fl">TVS formula</span>
-C1 (trace type): Wdr PSP = 1pt &middot; Deposit = 2pts &middot; <strong>Withdrawal = 3pts</strong><br>
-C2 (discovery): Dep retrace = 1pt &middot; First-time = 2pts &middot; <strong>Wdr retrace = 3pts</strong><br>
-<strong>TVS = (C1 + C2) &divide; 2 &divide; total traces</strong> &nbsp; | &nbsp; 2025 baseline: 2.1 &nbsp; | &nbsp; Q1 target: 3.0
+<!-- MONTHLY DETAIL CARDS -->
+<div class="s">
+<div class="sh"><h2>Monthly snapshots</h2></div>
+<div class="g3">
+<div class="mc ao">
+<div class="ml">January</div>
+<div class="mv">139 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
+<div class="ms mu">87D / 35W / 16Dir</div>
+<div class="ms wa">TVS 2.10 | WIS 25%</div>
+<div class="ms mu">3 tracers | $1,089 ($7.84/tr)</div>
+<div class="ms mu" style="margin-top:6px">Denis (42), Hilal (61), Ricardo (36)</div>
 </div>
-<div class="grid g3" style="margin-bottom:16px">
-<div class="mc accent-blue"><div class="mc-label">C1/trace (type)</div><div class="mc-val">2.50</div><div class="mc-sub warn">Gap to max: 0.50</div></div>
-<div class="mc accent-red"><div class="mc-label">C2/trace (discovery)</div><div class="mc-val" style="color:var(--red)">2.06</div><div class="mc-sub dn">Gap to max: 0.94 - bottleneck</div></div>
-<div class="mc accent-purple"><div class="mc-label">Mar TVS</div><div class="mc-val">2.28</div><div class="mc-sub warn">Gap to target: 0.72</div></div>
+<div class="mc ao">
+<div class="ml">February</div>
+<div class="mv">113 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
+<div class="ms mu">60D / 51W / 2Dir</div>
+<div class="ms wa">TVS 2.24 | WIS 45%</div>
+<div class="ms mu">4 tracers | $985 ($8.72/tr)</div>
+<div class="ms mu" style="margin-top:6px">Denis (5), Hilal (39), Osama (19), Ricardo (50)</div>
 </div>
-<div class="grid g2">
-<div class="chart-card">
-<div class="chart-title">C1 vs C2 per trace by tracer</div>
-<div class="chart-wrap" style="height:280px"><canvas id="gapChart"></canvas></div>
-<div class="legend">
-<span><i style="background:#3498DB"></i>C1/trace</span>
-<span><i style="background:#E67E22"></i>C2/trace</span>
-</div>
-</div>
-<div class="chart-card">
-<div class="chart-title">C2 composition (why C2 is stuck near 2.0)</div>
-<div class="chart-wrap" style="height:280px"><canvas id="c2Chart"></canvas></div>
-<div class="legend">
-<span><i style="background:#2ECC71"></i>First-time 2pts</span>
-<span><i style="background:#9B59B6"></i>Wdr retrace 3pts</span>
-<span><i style="background:#555550"></i>Dep retrace 1pt</span>
-</div>
+<div class="mc ao">
+<div class="ml">March</div>
+<div class="mv">268 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
+<div class="ms mu">129D / 135W / 4Dir</div>
+<div class="ms up">TVS 2.28 | WIS 50%</div>
+<div class="ms mu">7 tracers | $1,198 ($4.47/tr)</div>
+<div class="ms mu" style="margin-top:6px">Bloom, Denis, Hilal, Juan Jose, Priscilla, Ricardo, Tuomas</div>
 </div>
 </div>
 </div>
 
-<div class="section">
-<div class="section-hdr"><h2>March per-tracer detail</h2></div>
-<div class="chart-card">
+<!-- COST EFFICIENCY -->
+<div class="s">
+<div class="sh"><h2>Cost efficiency</h2><span class="p pg">-43% cost/trace Q1</span></div>
+<div class="cw cc" style="height:260px;padding-bottom:50px"><canvas id="c3"></canvas></div>
+<div class="lg"><span><i style="background:rgba(46,204,113,0.25)"></i>Traces</span><span><i style="background:#9B59B6"></i>$/trace</span></div>
+</div>
+
+<div class="dv"></div>
+
+<!-- TVS DEEP DIVE -->
+<div class="s">
+<div class="sh"><h2>TVS component breakdown</h2><span class="p pr">C2 is the bottleneck</span></div>
+<div class="fb">
+<span class="fl">Why TVS is stuck below 3.0</span>
+C1 avg/trace: 2.42 (gap: 0.58) -- needs more withdrawals<br>
+C2 avg/trace: 2.03 (gap: <strong>0.97</strong>) -- needs more withdrawal retraces<br>
+90% of Q1 traces are first-time discoveries (2pts on C2). Only wdr retraces score 3pts.<br>
+<strong>Structural ceiling ~2.50 with discovery-heavy work. 3.0 requires 100% wdr retraces.</strong>
+</div>
+<div class="g2">
+<div class="cc">
+<div class="ct">C2 composition (why C2 is near 2.0)</div>
+<div class="cw" style="height:260px"><canvas id="c4"></canvas></div>
+<div class="lg"><span><i style="background:#2ECC71"></i>First-time 2pts (90%)</span><span><i style="background:#9B59B6"></i>Wdr retrace 3pts (7%)</span><span><i style="background:#555550"></i>Dep retrace 1pt (4%)</span></div>
+</div>
+<div class="cc">
+<div class="ct">C1 vs C2 per trace by tracer (March)</div>
+<div class="cw" style="height:260px"><canvas id="c5"></canvas></div>
+<div class="lg"><span><i style="background:#3498DB"></i>C1/trace</span><span><i style="background:#E67E22"></i>C2/trace</span></div>
+</div>
+</div>
+</div>
+
+<!-- FULL Q1 TVS TABLE -->
+<div class="s">
+<div class="sh"><h2>Q1 per-tracer TVS detail</h2></div>
+<div class="cc">
 <table class="tbl">
-<thead><tr>
-<th>Tracer</th><th class="n">Traces</th><th class="n">Dep</th><th class="n">Wdr</th><th class="n">Dir</th>
-<th class="n">1st</th><th class="n">D-Ret</th><th class="n">W-Ret</th>
-<th class="n">C1</th><th class="n">C2</th><th class="n">TVS</th><th>Status</th>
-</tr></thead>
+<thead><tr><th></th><th>Tracer</th><th class="n">Trc</th><th class="n">Dep</th><th class="n">Wdr</th><th class="n">Dir</th><th class="n">1st</th><th class="n">D-R</th><th class="n">W-R</th><th class="n">C1</th><th class="n">C2</th><th class="n">TVS</th></tr></thead>
 <tbody>
-<tr><td class="tracer-name">Bloom</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">9</td><td class="n">27</td><td class="n">27</td><td class="n" style="color:var(--green);font-weight:600">3.00</td><td><span class="badge badge-green">Max</span></td></tr>
-<tr><td class="tracer-name">Ricardo</td><td class="n">24</td><td class="n">5</td><td class="n">19</td><td class="n">0</td><td class="n">23</td><td class="n">0</td><td class="n">1</td><td class="n">67</td><td class="n">49</td><td class="n" style="color:var(--green);font-weight:600">2.42</td><td><span class="badge badge-green">Strong</span></td></tr>
-<tr><td class="tracer-name">Denis</td><td class="n">58</td><td class="n">24</td><td class="n">34</td><td class="n">0</td><td class="n">52</td><td class="n">0</td><td class="n">6</td><td class="n">150</td><td class="n">122</td><td class="n" style="font-weight:600">2.34</td><td><span class="badge badge-orange">Good</span></td></tr>
-<tr><td class="tracer-name">Tuomas</td><td class="n">20</td><td class="n">11</td><td class="n">9</td><td class="n">0</td><td class="n">19</td><td class="n">0</td><td class="n">1</td><td class="n">49</td><td class="n">41</td><td class="n" style="font-weight:600">2.25</td><td><span class="badge badge-orange">Good</span></td></tr>
-<tr><td class="tracer-name">Priscilla</td><td class="n">55</td><td class="n">28</td><td class="n">27</td><td class="n">0</td><td class="n">33</td><td class="n">11</td><td class="n">11</td><td class="n">137</td><td class="n">110</td><td class="n" style="font-weight:600">2.25</td><td><span class="badge badge-orange">Good</span></td></tr>
-<tr><td class="tracer-name">Juan Jose</td><td class="n">34</td><td class="n">16</td><td class="n">15</td><td class="n">3</td><td class="n">34</td><td class="n">0</td><td class="n">0</td><td class="n">83</td><td class="n">68</td><td class="n" style="font-weight:600">2.22</td><td><span class="badge badge-orange">Good</span></td></tr>
-<tr><td class="tracer-name">Hilal</td><td class="n">68</td><td class="n">45</td><td class="n">22</td><td class="n">1</td><td class="n">68</td><td class="n">0</td><td class="n">0</td><td class="n">158</td><td class="n">136</td><td class="n" style="color:var(--red);font-weight:600">2.16</td><td><span class="badge badge-red">Low WIS</span></td></tr>
-<tr class="agg-row"><td style="color:var(--orange);font-weight:600">Mar total</td><td class="n" style="color:var(--orange)">268</td><td class="n">129</td><td class="n">135</td><td class="n">4</td><td class="n">229</td><td class="n">11</td><td class="n">28</td><td class="n">671</td><td class="n">553</td><td class="n" style="color:var(--orange);font-weight:700">2.28</td><td></td></tr>
+<tr class="ar2"><td colspan="3" style="color:var(--orange)">January</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.10</td></tr>
+<tr><td></td><td class="tn">Denis</td><td class="n">42</td><td class="n">23</td><td class="n">19</td><td class="n">0</td><td class="n">40</td><td class="n">0</td><td class="n">2</td><td class="n">103</td><td class="n">86</td><td class="n">2.25</td></tr>
+<tr><td></td><td class="tn">Hilal</td><td class="n">61</td><td class="n">43</td><td class="n">10</td><td class="n">7</td><td class="n">61</td><td class="n">0</td><td class="n">0</td><td class="n">132</td><td class="n">122</td><td class="n">2.08</td></tr>
+<tr><td></td><td class="tn">Ricardo</td><td class="n">36</td><td class="n">21</td><td class="n">6</td><td class="n">9</td><td class="n">27</td><td class="n">9</td><td class="n">0</td><td class="n">78</td><td class="n">63</td><td class="n">1.96</td></tr>
+<tr class="ar2"><td colspan="3" style="color:var(--orange)">February</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.24</td></tr>
+<tr><td></td><td class="tn">Hilal</td><td class="n">39</td><td class="n">9</td><td class="n">28</td><td class="n">2</td><td class="n">39</td><td class="n">0</td><td class="n">0</td><td class="n">106</td><td class="n">78</td><td class="n" style="color:var(--green)">2.36</td></tr>
+<tr><td></td><td class="tn">Denis</td><td class="n">5</td><td class="n">2</td><td class="n">3</td><td class="n">0</td><td class="n">3</td><td class="n">0</td><td class="n">2</td><td class="n">13</td><td class="n">12</td><td class="n" style="color:var(--green)">2.50</td></tr>
+<tr><td></td><td class="tn">Osama</td><td class="n">19</td><td class="n">11</td><td class="n">8</td><td class="n">0</td><td class="n">17</td><td class="n">0</td><td class="n">2</td><td class="n">46</td><td class="n">40</td><td class="n">2.26</td></tr>
+<tr><td></td><td class="tn">Ricardo</td><td class="n">50</td><td class="n">38</td><td class="n">12</td><td class="n">0</td><td class="n">50</td><td class="n">0</td><td class="n">0</td><td class="n">112</td><td class="n">100</td><td class="n">2.12</td></tr>
+<tr class="ar2"><td colspan="3" style="color:var(--orange)">March</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.28</td></tr>
+<tr><td></td><td class="tn">Bloom</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">9</td><td class="n">27</td><td class="n">27</td><td class="n" style="color:var(--green)">3.00</td></tr>
+<tr><td></td><td class="tn">Ricardo</td><td class="n">24</td><td class="n">5</td><td class="n">19</td><td class="n">0</td><td class="n">23</td><td class="n">0</td><td class="n">1</td><td class="n">67</td><td class="n">49</td><td class="n" style="color:var(--green)">2.42</td></tr>
+<tr><td></td><td class="tn">Denis</td><td class="n">58</td><td class="n">24</td><td class="n">34</td><td class="n">0</td><td class="n">52</td><td class="n">0</td><td class="n">6</td><td class="n">150</td><td class="n">122</td><td class="n">2.34</td></tr>
+<tr><td></td><td class="tn">Tuomas</td><td class="n">20</td><td class="n">11</td><td class="n">9</td><td class="n">0</td><td class="n">19</td><td class="n">0</td><td class="n">1</td><td class="n">49</td><td class="n">41</td><td class="n">2.25</td></tr>
+<tr><td></td><td class="tn">Priscilla</td><td class="n">55</td><td class="n">28</td><td class="n">27</td><td class="n">0</td><td class="n">33</td><td class="n">11</td><td class="n">11</td><td class="n">137</td><td class="n">110</td><td class="n">2.25</td></tr>
+<tr><td></td><td class="tn">Juan Jose</td><td class="n">34</td><td class="n">16</td><td class="n">15</td><td class="n">3</td><td class="n">34</td><td class="n">0</td><td class="n">0</td><td class="n">83</td><td class="n">68</td><td class="n">2.22</td></tr>
+<tr><td></td><td class="tn">Hilal</td><td class="n">68</td><td class="n">45</td><td class="n">22</td><td class="n">1</td><td class="n">68</td><td class="n">0</td><td class="n">0</td><td class="n">158</td><td class="n">136</td><td class="n" style="color:var(--red)">2.16</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div class="divider"></div>
+<div class="dv"></div>
 
-<div class="section">
-<div class="section-hdr"><h2>Q1 full history</h2></div>
-<div class="chart-card">
-<table class="tbl">
-<thead><tr><th></th><th>Tracer</th><th class="n">Traces</th><th class="n">Dep</th><th class="n">Wdr</th><th class="n">Dir</th><th class="n">1st</th><th class="n">D-R</th><th class="n">W-R</th><th class="n">C1</th><th class="n">C2</th><th class="n">TVS</th></tr></thead>
-<tbody>
-<tr class="agg-row"><td colspan="3" style="color:var(--orange)">January 2026</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.10</td></tr>
-<tr><td></td><td class="tracer-name">Denis</td><td class="n">42</td><td class="n">23</td><td class="n">19</td><td class="n">0</td><td class="n">40</td><td class="n">0</td><td class="n">2</td><td class="n">103</td><td class="n">86</td><td class="n">2.25</td></tr>
-<tr><td></td><td class="tracer-name">Hilal</td><td class="n">61</td><td class="n">43</td><td class="n">10</td><td class="n">7</td><td class="n">61</td><td class="n">0</td><td class="n">0</td><td class="n">132</td><td class="n">122</td><td class="n">2.08</td></tr>
-<tr><td></td><td class="tracer-name">Ricardo</td><td class="n">36</td><td class="n">21</td><td class="n">6</td><td class="n">9</td><td class="n">27</td><td class="n">9</td><td class="n">0</td><td class="n">78</td><td class="n">63</td><td class="n">1.96</td></tr>
-<tr class="agg-row"><td colspan="3" style="color:var(--orange)">February 2026</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.24</td></tr>
-<tr><td></td><td class="tracer-name">Hilal</td><td class="n">39</td><td class="n">9</td><td class="n">28</td><td class="n">2</td><td class="n">39</td><td class="n">0</td><td class="n">0</td><td class="n">106</td><td class="n">78</td><td class="n" style="color:var(--green)">2.36</td></tr>
-<tr><td></td><td class="tracer-name">Denis</td><td class="n">5</td><td class="n">2</td><td class="n">3</td><td class="n">0</td><td class="n">3</td><td class="n">0</td><td class="n">2</td><td class="n">13</td><td class="n">12</td><td class="n" style="color:var(--green)">2.50</td></tr>
-<tr><td></td><td class="tracer-name">Osama</td><td class="n">19</td><td class="n">11</td><td class="n">8</td><td class="n">0</td><td class="n">17</td><td class="n">0</td><td class="n">2</td><td class="n">46</td><td class="n">40</td><td class="n">2.26</td></tr>
-<tr><td></td><td class="tracer-name">Ricardo</td><td class="n">50</td><td class="n">38</td><td class="n">12</td><td class="n">0</td><td class="n">50</td><td class="n">0</td><td class="n">0</td><td class="n">112</td><td class="n">100</td><td class="n">2.12</td></tr>
-<tr class="agg-row"><td colspan="3" style="color:var(--orange)">March 2026</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="n" style="color:var(--orange);font-weight:700">2.28</td></tr>
-<tr><td></td><td class="tracer-name">Bloom</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td class="n">0</td><td class="n">0</td><td class="n">0</td><td class="n">9</td><td class="n">27</td><td class="n">27</td><td class="n" style="color:var(--green)">3.00</td></tr>
-<tr><td></td><td class="tracer-name">Ricardo</td><td class="n">24</td><td class="n">5</td><td class="n">19</td><td class="n">0</td><td class="n">23</td><td class="n">0</td><td class="n">1</td><td class="n">67</td><td class="n">49</td><td class="n" style="color:var(--green)">2.42</td></tr>
-<tr><td></td><td class="tracer-name">Denis</td><td class="n">58</td><td class="n">24</td><td class="n">34</td><td class="n">0</td><td class="n">52</td><td class="n">0</td><td class="n">6</td><td class="n">150</td><td class="n">122</td><td class="n">2.34</td></tr>
-<tr><td></td><td class="tracer-name">Tuomas</td><td class="n">20</td><td class="n">11</td><td class="n">9</td><td class="n">0</td><td class="n">19</td><td class="n">0</td><td class="n">1</td><td class="n">49</td><td class="n">41</td><td class="n">2.25</td></tr>
-<tr><td></td><td class="tracer-name">Priscilla</td><td class="n">55</td><td class="n">28</td><td class="n">27</td><td class="n">0</td><td class="n">33</td><td class="n">11</td><td class="n">11</td><td class="n">137</td><td class="n">110</td><td class="n">2.25</td></tr>
-<tr><td></td><td class="tracer-name">Juan Jose</td><td class="n">34</td><td class="n">16</td><td class="n">15</td><td class="n">3</td><td class="n">34</td><td class="n">0</td><td class="n">0</td><td class="n">83</td><td class="n">68</td><td class="n">2.22</td></tr>
-<tr><td></td><td class="tracer-name">Hilal</td><td class="n">68</td><td class="n">45</td><td class="n">22</td><td class="n">1</td><td class="n">68</td><td class="n">0</td><td class="n">0</td><td class="n">158</td><td class="n">136</td><td class="n" style="color:var(--red)">2.16</td></tr>
-</tbody>
-</table>
+<!-- OPERATIONAL IMPROVEMENTS -->
+<div class="s">
+<div class="sh"><h2>Operational improvements</h2><span class="p pt">Shipping in Q2</span></div>
+<div class="g3">
+<div class="cc">
+<div class="ct">NowPayments batch deposits</div>
+<div class="prose">
+<p>Deposit funding is now automated via NowPayments batch CSV uploads. The master operations sheet generates a batch file with amounts set 10% above minimum thresholds to absorb fees and slippage.</p>
+<p><strong>Impact:</strong> Eliminates manual wallet-by-wallet funding. A batch of 8+ deposits can be submitted in one action instead of individually. Reduces deposit turnaround from days to hours.</p>
+<p><strong>Status:</strong> Live on the master ops sheet. Batch generation, status tracking, and freelancer sheet sync all automated via GAS.</p>
+</div>
+</div>
+<div class="cc">
+<div class="ct">QC-gated payment model</div>
+<div class="prose">
+<p>Replacing hourly pay with per-trace, QC-approved payments. Freelancers get paid only for traces that pass QC with complete metadata. Upwork contracts convert from hourly to fixed-price milestones.</p>
+<p><strong>Rates:</strong> New entity deposit $5.00, additional deposit $3.50, withdrawal $4.00, withdrawal PSP $4.50, entity research (pre-approved) $1.50, metadata bonus $0.50/trace.</p>
+<p><strong>Impact:</strong> Aligns pay with output. Feb simulation showed high-output tracers earning more, low-output/high-hour tracers earning less. Eliminates the $38-45/trace outliers.</p>
+<p><strong>Status:</strong> Proposal complete. Pending budget sign-off from Lucy/Rhea. Pilot planned with 2-3 Upwork freelancers in April.</p>
+</div>
+</div>
+<div class="cc">
+<div class="ct">Sheet automations</div>
+<div class="prose">
+<p>The master operations sheet now syncs status changes bidirectionally with freelancer sheets. When a deposit is marked sent on master, it updates the freelancer's Transactions tab automatically.</p>
+<p><strong>Ingestion sweep:</strong> 6-hour time-driven sweep of all freelancer sheets for QC Ready rows, with deduplication and append to the master ingestion sheet.</p>
+<p><strong>Fee tracker:</strong> 12-file GAS codebase recovering blockchain dates and fees via block explorer APIs across 25+ chains.</p>
+<p><strong>Next:</strong> Weekly metrics script auto-calculates TVS, WIS, and traces per hour for every freelancer each Monday. QC quality tracking to be integrated once per-trace model is live.</p>
+</div>
+</div>
 </div>
 </div>
 
-<div class="note">Source: freelancer Google Sheets (Transactions + Already Traced tabs). Retool export shows higher counts for months where data was also ingested internally. TVS calculated using Already Traced tab for first-time vs retrace classification.</div>
+<div class="dv"></div>
+
+<!-- Q2 OUTLOOK -->
+<div class="s">
+<div class="sh"><h2>Q2 outlook</h2></div>
+<div class="prose">
+<p>Entity discovery will be deprioritised for Q2. The focus shifts to retracing already-traced entities with withdrawal-heavy batches. This directly addresses the C2 bottleneck: retrace work scores higher on C2 than first-time discovery, and when weighted toward withdrawals, it lifts both C1 and C2 simultaneously.</p>
+<p>QC-gated payments, once approved, will add a QC pass rate metric to future reports. The target is 90%+ first-time pass rate (KR1). This will appear as a new section in the Q2 dashboard alongside TVS and WIS.</p>
+<p>The NowPayments batch system and sheet automations are already live. The remaining automation gap is the weekly metrics script, which will eliminate manual data collection for these reports.</p>
+</div>
+</div>
+
+<div class="nt">Source: freelancer Google Sheets (Transactions + Already Traced tabs). Retool export shows higher counts for months where data was also ingested internally. TVS uses the Already Traced tab for first-time vs retrace classification. Cost figures from monthly freelancer tracker CSVs (Jan-Mar 2026).</div>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-Chart.defaults.color='#888880';
-Chart.defaults.borderColor='#2A2A2A';
-Chart.defaults.font.family="'DM Sans',sans-serif";
+Chart.defaults.color='#888880';Chart.defaults.borderColor='#2A2A2A';Chart.defaults.font.family="'DM Sans',sans-serif";
 var g='#1F1F1F',t='#888880';
-
-new Chart(document.getElementById('momChart'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'D',data:[87,60,129],backgroundColor:'#3498DB',stack:'a',order:2},{label:'W',data:[35,51,135],backgroundColor:'#2ECC71',stack:'a',order:2},{label:'Dir',data:[16,2,4],backgroundColor:'#555550',stack:'a',order:2},{label:'WIS',data:[25,45,50],type:'line',borderColor:'#E67E22',pointRadius:5,pointBackgroundColor:'#E67E22',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}},y1:{position:'right',min:0,max:70,grid:{display:false},ticks:{callback:function(v){return v+'%'}}}}}});
-
-new Chart(document.getElementById('tvsChart'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'C1',data:[2.25,2.45,2.50],backgroundColor:'#3498DB',order:2},{label:'C2',data:[1.95,2.04,2.06],backgroundColor:'#E67E22',order:2},{label:'TVS',data:[2.10,2.24,2.28],type:'line',borderColor:'#9B59B6',borderWidth:3,pointRadius:6,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3},{label:'Tgt',data:[3,3,3],type:'line',borderColor:'rgba(46,204,113,0.3)',borderDash:[6,4],pointRadius:0,yAxisID:'y1',order:0,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{display:false},y1:{min:1.5,max:3.2,grid:{color:g},position:'left'}}}});
-
-new Chart(document.getElementById('weekChart'),{type:'bar',data:{labels:['W11','W12','W13','W14'],datasets:[{label:'D',data:[40,46,32,11],backgroundColor:'#3498DB',stack:'a',order:2},{label:'W',data:[35,19,59,22],backgroundColor:'#2ECC71',stack:'a',order:2},{label:'WIS',data:[44.9,28.8,64.8,66.7],type:'line',borderColor:'#E67E22',pointRadius:5,pointBackgroundColor:'#E67E22',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}},y1:{position:'right',min:0,max:80,grid:{display:false},ticks:{callback:function(v){return v+'%'}}}}}});
-
-new Chart(document.getElementById('tracerChart'),{type:'bar',data:{labels:['Hilal 2.16','Denis 2.34','Priscilla 2.25','Juan Jose 2.22','Ricardo 2.42','Tuomas 2.25','Bloom 3.00'],datasets:[{label:'D',data:[45,24,28,16,5,11,0],backgroundColor:'#3498DB'},{label:'W',data:[22,34,27,15,19,9,9],backgroundColor:'#2ECC71'},{label:'Dir',data:[1,0,0,3,0,0,0],backgroundColor:'#555550'}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{color:g}},y:{stacked:true,grid:{display:false}}}}});
-
-new Chart(document.getElementById('gapChart'),{type:'bar',data:{labels:['Bloom','Ricardo','Denis','Tuomas','Priscilla','Juan Jose','Hilal'],datasets:[{label:'C1',data:[3.00,2.79,2.59,2.45,2.49,2.44,2.32],backgroundColor:'#3498DB'},{label:'C2',data:[3.00,2.04,2.10,2.05,2.00,2.00,2.00],backgroundColor:'#E67E22'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{min:1.5,max:3.2,grid:{color:g}}}}});
-
-new Chart(document.getElementById('c2Chart'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'1st',data:[128,109,229],backgroundColor:'#2ECC71',stack:'a'},{label:'W-R',data:[2,4,28],backgroundColor:'#9B59B6',stack:'a'},{label:'D-R',data:[9,0,11],backgroundColor:'#555550',stack:'a'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}}}}});
+new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'D',data:[87,60,129],backgroundColor:'#3498DB',stack:'a',order:2},{label:'W',data:[35,51,135],backgroundColor:'#2ECC71',stack:'a',order:2},{label:'Dir',data:[16,2,4],backgroundColor:'#555550',stack:'a',order:2},{label:'WIS',data:[25,45,50],type:'line',borderColor:'#E67E22',pointRadius:5,pointBackgroundColor:'#E67E22',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}},y1:{position:'right',min:0,max:70,grid:{display:false},ticks:{callback:function(v){return v+'%'}}}}}});
+new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'C1',data:[2.25,2.45,2.50],backgroundColor:'#3498DB',order:2},{label:'C2',data:[1.95,2.04,2.06],backgroundColor:'#E67E22',order:2},{label:'TVS',data:[2.10,2.24,2.28],type:'line',borderColor:'#9B59B6',borderWidth:3,pointRadius:6,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3},{label:'Tgt',data:[3,3,3],type:'line',borderColor:'rgba(46,204,113,0.3)',borderDash:[6,4],pointRadius:0,yAxisID:'y1',order:0,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{display:false},y1:{min:1.5,max:3.2,grid:{color:g},position:'left'}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'Tr',data:[139,113,268],backgroundColor:'rgba(46,204,113,0.2)',borderColor:'#2ECC71',borderWidth:1,yAxisID:'y',order:2},{label:'$/tr',data:[7.84,8.72,4.47],type:'line',borderColor:'#9B59B6',pointRadius:5,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:g},title:{display:true,text:'Traces',color:t,font:{size:11}}},y1:{position:'right',grid:{display:false},ticks:{callback:function(v){return'$'+v.toFixed(0)}},title:{display:true,text:'$/trace',color:'#9B59B6',font:{size:11}}}}}});
+new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'1st',data:[128,109,229],backgroundColor:'#2ECC71',stack:'a'},{label:'W-R',data:[2,4,28],backgroundColor:'#9B59B6',stack:'a'},{label:'D-R',data:[9,0,11],backgroundColor:'#555550',stack:'a'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}}}}});
+new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Bloom','Ricardo','Denis','Tuomas','Priscilla','Juan Jose','Hilal'],datasets:[{label:'C1',data:[3.00,2.79,2.59,2.45,2.49,2.44,2.32],backgroundColor:'#3498DB'},{label:'C2',data:[3.00,2.04,2.10,2.05,2.00,2.00,2.00],backgroundColor:'#E67E22'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{min:1.5,max:3.2,grid:{color:g}}}}});
 </script>
 </body>
 </html>
