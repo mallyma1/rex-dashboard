@@ -74,8 +74,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 <div class="mc ao"><div class="ml">Total traces</div><div class="mv">620</div><div class="ms mu">375D / 182W / 60Dir / 3Priv</div></div>
 <div class="mc at"><div class="ml">Entities traced</div><div class="mv">76</div><div class="ms mu">Unique across Q1</div></div>
 <div class="mc ap"><div class="ml">QC pass rate</div><div class="mv">93%</div><div class="ms up">578 of 620 Ready</div></div>
-<div class="mc ag"><div class="ml">Total spend</div><div class="mv">$3,271</div><div class="ms mu">Freelancer cost only</div></div>
-<div class="mc ab"><div class="ml">Cost per trace</div><div class="mv">$5.28</div><div class="ms up">Based on 620 Retool traces</div></div>
+<div class="mc ag"><div class="ml">Total cost</div><div class="mv">$3,989</div><div class="ms mu">Pay $3,271 + fees $718</div></div>
+<div class="mc ab"><div class="ml">Cost per trace</div><div class="mv">$6.43</div><div class="ms up">Based on 620 Retool traces</div></div>
 </div>
 </div>
 
@@ -107,7 +107,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 <div class="mv">177 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
 <div class="ms mu">114D / 29W / 32Dir | 27 entities</div>
 <div class="ms wa">WIS 16%</div>
-<div class="ms mu">$1,089 spend ($6.15/trace)</div>
+<div class="ms mu">$1,338 total ($7.56/trace)</div>
 <div class="ms mu" style="margin-top:6px"><span class="src src-f">Sheets</span> 139 traces, 3 tracers: Denis (42), Hilal (61), Ricardo (36)</div>
 <div class="ms mu">TVS 2.03</div>
 </div>
@@ -116,7 +116,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 <div class="mv">148 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
 <div class="ms mu">82D / 51W / 14Dir | 24 entities</div>
 <div class="ms wa">WIS 34%</div>
-<div class="ms mu">$985 spend ($6.66/trace)</div>
+<div class="ms mu">$1,308 total ($8.84/trace)</div>
 <div class="ms mu" style="margin-top:6px"><span class="src src-f">Sheets</span> 113 traces, 4 tracers: Denis, Hilal, Osama, Ricardo</div>
 <div class="ms mu">TVS 2.27</div>
 </div>
@@ -125,26 +125,93 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 <div class="mv">295 <span style="font-size:0.7rem;font-weight:400">traces</span></div>
 <div class="ms mu">179D / 102W / 14Dir | 28 entities</div>
 <div class="ms up">WIS 35%</div>
-<div class="ms mu">$1,198 spend ($4.06/trace)</div>
+<div class="ms mu">$1,345 total ($4.56/trace)</div>
 <div class="ms mu" style="margin-top:6px"><span class="src src-f">Sheets</span> 268 traces, 7 tracers: Bloom, Denis, Hilal, Juan Jose, Priscilla, Ricardo, Tuomas</div>
 <div class="ms mu">TVS 2.24</div>
 </div>
 </div>
 </div>
 
-<!-- COST + QC -->
+<!-- COST + FEES + QC -->
 <div class="s">
-<div class="sh"><h2>Cost efficiency + QC</h2></div>
+<div class="sh"><h2>Cost breakdown</h2><span class="p pg">Fees + freelancer pay</span></div>
+<div class="g4">
+<div class="mc ao"><div class="ml">Q1 total cost</div><div class="mv">$3,989</div><div class="ms mu">Pay + tx fees combined</div></div>
+<div class="mc ag"><div class="ml">Cost per trace</div><div class="mv">$6.43</div><div class="ms mu">Based on 620 Retool traces</div></div>
+<div class="mc ab"><div class="ml">Freelancer pay</div><div class="mv">$3,271</div><div class="ms mu">82% of total cost</div></div>
+<div class="mc ac"><div class="ml">Transaction fees</div><div class="mv">$718</div><div class="ms mu">18% of total cost</div></div>
+</div>
+</div>
+
+<div class="s">
 <div class="g2">
 <div class="cc">
-<div class="ct">Cost per trace trend (spend / Retool traces)</div>
-<div class="cw" style="height:260px"><canvas id="c3"></canvas></div>
-<div class="lg"><span><i style="background:rgba(46,204,113,0.25)"></i>Retool traces</span><span><i style="background:#9B59B6"></i>$/trace</span></div>
+<div class="ct">Total cost per trace trend (pay + fees / Retool traces)</div>
+<div class="cw" style="height:280px"><canvas id="c3"></canvas></div>
+<div class="lg"><span><i style="background:#3498DB"></i>Freelancer pay</span><span><i style="background:#E67E22"></i>Tx fees</span><span><i style="background:#9B59B6"></i>Total $/trace</span></div>
 </div>
 <div class="cc">
-<div class="ct">QC status (Q1, Retool)</div>
-<div class="cw" style="height:260px"><canvas id="cqc"></canvas></div>
-<div class="lg"><span><i style="background:#2ECC71"></i>Ready 578</span><span><i style="background:#555550"></i>Not started 20</span><span><i style="background:#E74C3C"></i>Failed 12</span><span><i style="background:#E67E22"></i>Manual review 8</span></div>
+<div class="ct">Fee per trace trend</div>
+<div class="cw" style="height:280px"><canvas id="cfee"></canvas></div>
+<div class="lg"><span><i style="background:#3498DB"></i>Platform fees</span><span><i style="background:#E67E22"></i>On-chain fees</span><span><i style="background:#9B59B6"></i>Avg fee/trace</span></div>
+</div>
+</div>
+</div>
+
+<div class="s">
+<div class="sh"><h2>Fee detail</h2></div>
+<div class="g3">
+<div class="mc ab">
+<div class="ml">January fees</div>
+<div class="mv">$249</div>
+<div class="ms mu">Platform $238 / On-chain $3</div>
+<div class="ms mu">$1.19/trace avg (209 with data)</div>
+</div>
+<div class="mc ab">
+<div class="ml">February fees</div>
+<div class="mv">$323</div>
+<div class="ms mu">Platform $300 / On-chain $21</div>
+<div class="ms mu">$1.30/trace avg (248 with data)</div>
+</div>
+<div class="mc ag">
+<div class="ml">March fees</div>
+<div class="mv">$147</div>
+<div class="ms mu">Platform $103 / On-chain $37</div>
+<div class="ms up">$0.48/trace avg (-63% vs Feb)</div>
+</div>
+</div>
+<div class="cc" style="margin-top:12px">
+<div class="ct">Fee breakdown by trace type (Q1)</div>
+<div class="cw" style="height:220px"><canvas id="cftype"></canvas></div>
+<div class="lg"><span><i style="background:#3498DB"></i>Deposit ($0.84 avg)</span><span><i style="background:#2ECC71"></i>Withdraw ($1.05 avg)</span><span><i style="background:#555550"></i>Direct ($2.29 avg)</span></div>
+</div>
+<div class="cc" style="margin-top:12px">
+<div class="prose">
+<p>March fee/trace dropped 63% vs February. Platform fees fell from $300 to $103 as NowPayments batch deposits replaced manual wallet-by-wallet funding. On-chain fees increased from $21 to $37, reflecting more withdrawal activity (withdrawals incur network fees, deposits mostly don't).</p>
+<p>51 traces flagged as high cost across Q1. Direct traces are the most expensive at $2.29/trace avg, but represent only 7% of volume.</p>
+</div>
+</div>
+</div>
+
+<div class="s">
+<div class="sh"><h2>QC status</h2><span class="p po">Retool</span></div>
+<div class="g2">
+<div class="cc">
+<div class="ct">Q1 QC breakdown (620 traces)</div>
+<div class="cw" style="height:240px"><canvas id="cqc"></canvas></div>
+<div class="lg"><span><i style="background:#2ECC71"></i>Ready 578 (93%)</span><span><i style="background:#555550"></i>Not started 20</span><span><i style="background:#E74C3C"></i>Failed 12</span><span><i style="background:#E67E22"></i>Manual review 8</span></div>
+</div>
+<div class="cc">
+<div class="ct">Monthly cost summary</div>
+<table class="tbl">
+<thead><tr><th></th><th class="n">Traces</th><th class="n">Pay</th><th class="n">Fees</th><th class="n">Total</th><th class="n">$/trace</th></tr></thead>
+<tbody>
+<tr><td class="tn">January</td><td class="n">177</td><td class="n">$1,089</td><td class="n">$249</td><td class="n">$1,338</td><td class="n">$7.56</td></tr>
+<tr><td class="tn">February</td><td class="n">148</td><td class="n">$985</td><td class="n">$323</td><td class="n">$1,308</td><td class="n">$8.84</td></tr>
+<tr><td class="tn">March</td><td class="n">295</td><td class="n">$1,198</td><td class="n">$147</td><td class="n">$1,345</td><td class="n" style="color:var(--green)">$4.56</td></tr>
+<tr class="ar2"><td style="color:var(--orange)">Q1</td><td class="n" style="color:var(--orange)">620</td><td class="n">$3,271</td><td class="n">$718</td><td class="n" style="color:var(--orange)">$3,989</td><td class="n" style="color:var(--orange)">$6.43</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -267,7 +334,7 @@ C2 avg/trace: 1.96 (gap: <strong>1.04</strong>) -- needs more withdrawal retrace
 </div>
 </div>
 
-<div class="nt">Retool export (3 Apr 2026) is the source of truth for total traces, entities, and QC status. Freelancer Google Sheets (Transactions tabs) provide per-tracer attribution, hours, and cost data. TVS first-time vs retrace classification uses Retool metadata entity creation dates (Committed date time). The +100 trace delta between Retool (620) and freelancer sheets (520) represents data ingested directly by the internal ops team. Cost figures from monthly freelancer tracker CSVs (Jan-Mar 2026).</div>
+<div class="nt">Retool export (3 Apr 2026) is the source of truth for total traces, entities, and QC status. Freelancer Google Sheets (Transactions tabs) provide per-tracer attribution, hours, and cost data. TVS first-time vs retrace classification uses Retool metadata entity creation dates (Committed date time). Transaction fees from the Chainlabs Fee Tracker (platform + on-chain fees at tx date USD). The +100 trace delta between Retool (620) and freelancer sheets (520) represents data ingested directly by the internal ops team.</div>
 
 </div>
 
@@ -277,7 +344,9 @@ Chart.defaults.color='#888880';Chart.defaults.borderColor='#2A2A2A';Chart.defaul
 var g='#1F1F1F';
 new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'D',data:[114,82,179],backgroundColor:'#3498DB',stack:'a',order:2},{label:'W',data:[29,51,102],backgroundColor:'#2ECC71',stack:'a',order:2},{label:'Dir',data:[32,14,14],backgroundColor:'#555550',stack:'a',order:2},{label:'WIS',data:[16,34,35],type:'line',borderColor:'#E67E22',pointRadius:5,pointBackgroundColor:'#E67E22',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}},y1:{position:'right',min:0,max:60,grid:{display:false},ticks:{callback:function(v){return v+'%'}}}}}});
 new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'C1',data:[2.25,2.45,2.50],backgroundColor:'#3498DB',order:2},{label:'C2',data:[1.81,2.09,1.98],backgroundColor:'#E67E22',order:2},{label:'TVS',data:[2.03,2.27,2.24],type:'line',borderColor:'#9B59B6',borderWidth:3,pointRadius:6,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3},{label:'Tgt',data:[3,3,3],type:'line',borderColor:'rgba(46,204,113,0.3)',borderDash:[6,4],pointRadius:0,yAxisID:'y1',order:0,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{display:false},y1:{min:1.5,max:3.2,grid:{color:g},position:'left'}}}});
-new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'Tr',data:[177,148,295],backgroundColor:'rgba(46,204,113,0.2)',borderColor:'#2ECC71',borderWidth:1,yAxisID:'y',order:2},{label:'$/tr',data:[6.15,6.66,4.06],type:'line',borderColor:'#9B59B6',pointRadius:5,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:g}},y1:{position:'right',grid:{display:false},ticks:{callback:function(v){return'$'+v.toFixed(0)}}}}}});
+new Chart(document.getElementById('c3'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'Pay',data:[1089,985,1198],backgroundColor:'#3498DB',stack:'a',order:2},{label:'Fees',data:[249,323,147],backgroundColor:'#E67E22',stack:'a',order:2},{label:'$/tr',data:[7.56,8.84,4.56],type:'line',borderColor:'#9B59B6',pointRadius:5,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g},title:{display:true,text:'USD',color:'#888880',font:{size:11}}},y1:{position:'right',grid:{display:false},ticks:{callback:function(v){return'$'+v.toFixed(0)}},title:{display:true,text:'$/trace',color:'#9B59B6',font:{size:11}}}}}});
+new Chart(document.getElementById('cfee'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'Platform',data:[238,300,103],backgroundColor:'#3498DB',stack:'a',order:2},{label:'On-chain',data:[3,21,37],backgroundColor:'#E67E22',stack:'a',order:2},{label:'Avg',data:[1.19,1.30,0.48],type:'line',borderColor:'#9B59B6',pointRadius:5,pointBackgroundColor:'#9B59B6',yAxisID:'y1',order:1,fill:false,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g},title:{display:true,text:'USD',color:'#888880',font:{size:11}}},y1:{position:'right',grid:{display:false},ticks:{callback:function(v){return'$'+v.toFixed(2)}},title:{display:true,text:'$/trace',color:'#9B59B6',font:{size:11}}}}}});
+new Chart(document.getElementById('cftype'),{type:'bar',data:{labels:['Deposit','Withdraw','Direct'],datasets:[{label:'Total',data:[372,325,21],backgroundColor:['#3498DB','#2ECC71','#555550']}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:g}},y:{grid:{display:false}}}}});
 new Chart(document.getElementById('cqc'),{type:'doughnut',data:{labels:['Ready','Not started','Failed','Manual review','Pending'],datasets:[{data:[578,20,12,8,2],backgroundColor:['#2ECC71','#555550','#E74C3C','#E67E22','#3498DB'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false}}}});
 new Chart(document.getElementById('c4'),{type:'bar',data:{labels:['Jan','Feb','Mar'],datasets:[{label:'1st',data:[96,65,125],backgroundColor:'#2ECC71',stack:'a'},{label:'W-R',data:[8,29,69],backgroundColor:'#9B59B6',stack:'a'},{label:'D-R',data:[35,19,74],backgroundColor:'#555550',stack:'a'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{stacked:true,grid:{display:false}},y:{stacked:true,grid:{color:g}}}}});
 new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Bloom','Ricardo','Denis','Tuomas','Priscilla','Juan Jose','Hilal'],datasets:[{label:'C1',data:[3.00,2.79,2.59,2.45,2.49,2.44,2.32],backgroundColor:'#3498DB'},{label:'C2',data:[2.00,2.21,2.07,1.85,1.98,2.00,1.85],backgroundColor:'#E67E22'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{min:1.5,max:3.2,grid:{color:g}}}}});
